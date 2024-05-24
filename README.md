@@ -1,6 +1,7 @@
 # FlaskAppAuthentifikation
+## Creating on Flask 
 
-## Runing...
+## Runing:
 ### 1. Create and activate enviroment
 ### Windows: 
 ~~~shell
@@ -23,4 +24,8 @@ pip install -r requirements.txt
 flask db init
 flas db migrate -m "Initial migration"
 flask db upgrade
+~~~
+### 4. Run
+~~~shell
+python run.py
 ~~~

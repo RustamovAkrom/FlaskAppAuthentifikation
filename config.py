@@ -1,8 +1,6 @@
 from dotenv import load_dotenv
+from pathlib import Path
 import os
-
-
-base_dir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config:
@@ -13,7 +11,11 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     DEBUG = True
-    
+
+    # File upload settings
+    UPLOAD_FOLDER = os.path.join(os.getcwd(), 'uploads')
+    MAX_CONTENT_LENGTH = 16 * 1024 * 1204 # 16 MB limit
+    ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif", "pdf", "txt"}
 
 class TestingConfig(Config):
     TESTING = True

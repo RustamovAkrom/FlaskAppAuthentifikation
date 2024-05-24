@@ -1,6 +1,6 @@
 # FlaskAppAuthentifikation
 
-## Runing
+## Runing...
 ### 1. Create and activate enviroment
 ### Windows: 
 ~~~shell

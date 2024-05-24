@@ -24,7 +24,7 @@
               </li>
               {% if current_user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('main.profile') }}">Profile</a>
+                    <a class="nav-link" href="{{ url_for('main.profile') }}">{{ current_user.username }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('main.logout') }}">Logout</a>
@@ -45,30 +45,15 @@
           </div>
         </div>
       </nav>
-        <!-- <div style="background-color: indigo;">
-            {% if current_user.is_authenticated %}
-                <h1>Welcome {{ current_user.username }}</h1>
-            {% endif %}
-        </div>
-        <ul>
-            <li><a href="{{ url_for('main.index') }}">Home</a></li>
-            <li><a href="{{ url_for('main.about') }}">About</a></li>
-            {% if current_user.is_authenticated %}
-            <li><a href="{{ url_for('main.profile') }}">Profile</a></li>
-            <li><a href="{{ url_for('main.logout') }}">Logout</a></li>
-            {% else %}
-            <li><a href="{{ url_for('main.login') }}">Login</a></li>
-            <li><a href="{{ url_for('main.register') }}">Register</a></li>
-            {% endif %}
-        </ul> -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                <div class="{{ category }}">{{ message }}</div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
     <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
         {% block content %}
         {% endblock %}
     </div>

@@ -7,6 +7,11 @@
 </head>
 <body>
     <nav>
+        <div style="background-color: indigo;">
+            {% if current_user.is_authenticated %}
+                <h1>Welcome {{ current_user.username }}</h1>
+            {% endif %}
+        </div>
         <ul>
             <li><a href="{{ url_for('main.index') }}">Home</a></li>
             <li><a href="{{ url_for('main.about') }}">About</a></li>

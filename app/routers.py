@@ -58,6 +58,13 @@ def register():
     return render_template("register.html", title="Register", form = form)
 
 
+@dp.route("/logout")
+def logout():
+    logout_user()
+    flash("You have been logged out.")
+    return redirect(url_for('main.index'))
+
+
 @dp.route('/profile')
 @login_required
 def profile():

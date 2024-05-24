@@ -2,7 +2,7 @@
 {% block title %} Registration {% endblock %}
 {% block content %}
 <h1>Register</h1>
-<form action="{{ url_for('main.register') }}">
+<form action="{{ url_for('main.register') }}" method="post">
     {{ form.hidden_tag() }}
     <p>
         {{ form.first_name.label }} <br>

@@ -2,6 +2,9 @@ from dotenv import load_dotenv
 import os
 
 
+base_dir = os.path.abspath(os.path.dirname(__file__))
+
+
 class Config:
     load_dotenv(".env")
 

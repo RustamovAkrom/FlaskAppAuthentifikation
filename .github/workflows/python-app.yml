@@ -33,9 +33,9 @@ jobs:
     
     - name: Load .env file
       run: |
-        echo "SECRET_KEY = "you-will-never-gues" >> .env
-        echo "DATABASE_URL = "sqlite:///sqlite.db" >> .env
-        
+        echo "SECRET_KEY = 'you-will-never-gues'" >> .env
+        echo "DATABASE_URL = 'sqlite:///sqlite.db'" >> .env
+
     - name: Run tests
       run: |
         python -m pytest
